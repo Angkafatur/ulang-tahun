@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Inggris! 🎉</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fbc2c2 0%, #f8e0e0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* container utama */
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            padding: 2.5rem 2rem;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            z-index: 10;
+            border: 2px solid rgba(255,255,255,0.5);
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #d44b4b;
+            text-shadow: 2px 2px 0 #ffe0e0;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            background: #ffd1d1;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+
+        .age-badge {
+            background: #ff8a8a;
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 50%;
+            margin: 1rem auto 1.5rem;
+            box-shadow: 0 8px 0 #b34343;
+            border: 3px solid white;
+        }
+
+        .age-badge small {
+            font-size: 1.2rem;
+            display: block;
+            margin-top: -15px;
+        }
+
+        .heart-icon {
+            font-size: 4rem;
+            color: #ff4d4d;
+            filter: drop-shadow(0 5px 5px rgba(255,0,0,0.3));
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            35% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            55% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        .message {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 1.5rem 0;
+            line-height: 1.8;
+            padding: 0 1rem;
+            font-weight: 300;
+        }
+
+        .signature {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #b34343;
+            margin-bottom: 1.5rem;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin: 1.5rem auto 0;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* floating hearts & balloons */
+        .floating-objects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .float-item {
+            position: absolute;
+            opacity: 0.7;
+            animation: float linear infinite;
+            font-size: 1.5rem;
+            user-select: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* tombol confetti */
+        .confetti-btn {
+            background: #ff8a8a;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 0 #b34343;
+            transition: all 0.2s;
+            border: 2px solid white;
+            pointer-events: auto;
+        }
+
+        .confetti-btn:active {
+            transform: translateY(5px);
+            box-shadow: none;
+        }
+
+        .confetti-btn i {
+            margin-right: 8px;
+        }
+
+        footer {
+            margin-top: 1rem;
+            color: #a56b6b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="birthday-card">
+        <h1>Selamat Ulang tahun <span>Sayang</span>!</h1>
+        <div class="age-badge">
+            24
+            <small>years</small>
+        </div>
+        <i class="fas fa-heart heart-icon"></i>
+        <p class="message">
+            Selamat ulang tahun yang ke 24 ya cintaku 🎂<br>
+            Semoga kamu sehat selalu, panjang umurnya, dikasih rezeki yang banyak, selalu sayang sama aku, selalu ingat aku, dan semoga di umur yang baru ini semua impian dan cita-citamu bisa tercapai. Terima kasih sudah menjadi bagian terindah dalam hidupku, I love you cinta </p>
+        <p class="signature">Aku sayang kamu<br>Sayangku ❤️</p>
+
+        <!-- ganti src dengan foto kalian berdua -->
+        <div class="photo-frame">
+            <img src="foto.jpeg" alt="Inggris and me">
+        </div>
+
+        <button class="confetti-btn" id="confettiBtn"><i class="fas fa-star"></i> Click for confetti!</button>
+        <footer>🎈 24 candles for 24 years 🎈</footer>
+    </div>
+
+    <!-- container untuk objek melayang -->
+    <div class="floating-objects" id="floatContainer"></div>
+
+    <!-- canvas confetti (via library) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script>
+        (function() {
+            // 1. Floating hearts & balloons
+            const floatContainer = document.getElementById('floatContainer');
+            const symbols = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🎈', '🎉', '🎂', '✨', '💖', '💗', '💕'];
+            const numberOfItems = 30;
+
+            for (let i = 0; i < numberOfItems; i++) {
+                const item = document.createElement('div');
+                item.className = 'float-item';
+                // pilih simbol acak
+                const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                item.textContent = randomSymbol;
+
+                // ukuran acak
+                const size = Math.random() * 2 + 1; // 1rem - 3rem
+                item.style.fontSize = size + 'rem';
+
+                // posisi horizontal acak
+                item.style.left = Math.random() * 100 + '%';
+
+                // durasi animasi acak (5s - 15s)
+                const duration = Math.random() * 10 + 8;
+                item.style.animationDuration = duration + 's';
+
+                // delay acak
+                item.style.animationDelay = Math.random() * 5 + 's';
+
+                floatContainer.appendChild(item);
+            }
+
+            // 2. Confetti on load (sedikit)
+            confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } });
+            // dan setiap klik tombol
+            document.getElementById('confettiBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
+                // tambahkan sedikit variasi
+                setTimeout(() => {
+                    confetti({ particleCount: 100, spread: 80, origin: { y: 0.5, x: 0.2 }, colors: ['#ff8a8a', '#ffd1d1', '#ffffff'] });
+                }, 200);
+                setTimeout(() => {
+                    confetti({ particleCount: 100, spread: 80, origin: { y: 0.5, x: 0.8 }, colors: ['#ff4d4d', '#ffe0e0', '#ffb3b3'] });
+                }, 400);
+            });
+
+            // 3. Opsional: tambah confetti setiap beberapa detik? tidak, biar manual
+        })();
+    </script>
+</body>
+</html>
